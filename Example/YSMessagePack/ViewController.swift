@@ -45,19 +45,21 @@ class ViewController: UIViewController {
         // Now we want to pack them and send across
         // the `payload` is a NSData Object and you just
         // send them across
-        let payload = packItems([someString, someInteger, someDouble, someBool, myOwnDataStructure])
+        let payload = pack(items: [someString, someInteger, someDouble, someBool, myOwnDataStructure])
         
+
+        self.example_normal_unpack(payload)
+       
         // uncomment to use any of the following 
         // unpacking methods
-//        example_normal_unpack(payload)
 //        example_async_unpack(payload)
 //        example_async_unapck_for_each(payload)
         
     }
     
     
-    func example_normal_unpack(payload: NSData) {
-        let unpack = try! payload.unpack()
+    func example_normal_unpack(_ payload: NSData) {
+        let unpack = try! payload.itemsUnpacked()
         
         // Now unpack our packed data
         // This will return an array of `NSData`,
@@ -83,7 +85,9 @@ class ViewController: UIViewController {
     func example_async_unpack(payload: NSData) {
         // async (non-blocking) unpacking
         // useful when the payload is too big
+
         payload.unpackAsync(DISPATCH_QUEUE_PRIORITY_HIGH, competitionHandler: { (unpack) in
+        
             let strUnpacked = unpack[0].castToString()
             let intUnpacked = unpack[1].castToInt
             let doubleUnpacked = unpack[2].castToDouble
@@ -111,13 +115,13 @@ class ViewController: UIViewController {
         // the member finished unpack
         payload.unpackAsyncForEach(DISPATCH_QUEUE_PRIORITY_HIGH) { (data, type, index) in
             switch type {
-            case .Str_8bit, .Str_16bit, .Str_32bit, .fixstr:
+            case .str8bit, .str16bit, .str32bit, .fixstr:
                 print("Fouond String \(data.castToString()!) at index \(index)")
-            case .fixInt, .fixNegativeInt, .Int8, .Int16, .Int32, .Int64, .UInt8, .UInt16, .UInt32, .UInt64:
+            case .fixInt, .fixNegativeInt, .int8, .int16, .int32, .int64, .uInt8, .uInt16, .uInt32, .uInt64:
                 print("Found Int \(data.castToInt) at index \(index)")
             case .float32, .float64:
                 print("Found Float \(data.castToDouble) at index \(index)")
-            case .Bool:
+            case .bool:
                 print("Found Bool \(data.castToBool) at index \(index)")
             default:
                 break;

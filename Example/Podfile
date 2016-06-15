@@ -1,5 +1,5 @@
 use_frameworks!
 
 target 'YSMessagePack_Example' do
-  pod 'YSMessagePack'
+  pod 'YSMessagePack', '~>1.6.0'
 end

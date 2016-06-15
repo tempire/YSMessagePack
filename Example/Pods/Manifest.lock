@@ -1,12 +1,12 @@
 PODS:
-  - YSMessagePack (1.5.0)
+  - YSMessagePack (1.6.0)
 
 DEPENDENCIES:
-  - YSMessagePack
+  - YSMessagePack (~> 1.6.0)
 
 SPEC CHECKSUMS:
-  YSMessagePack: 2f4cbfaf6db234b66ee2f819737eb528b631040d
+  YSMessagePack: 885ad9dcbb105299d8c4907c5a1d2cf8556fafc3
 
-PODFILE CHECKSUM: c7367f8cbb69fc115b6d7e10a2eead09580ecf9f
+PODFILE CHECKSUM: a656d62a2fd7b89f319bf9f099f968549af53be1
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1
