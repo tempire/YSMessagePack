@@ -1,8 +1,13 @@
-# YSMessagePack- for swift 3
+# YSMessagePack
 
-YSMessagePack is a messagePack packer/unpacker written in swift (swift 3 ready). It is designed to be easy to use. YSMessagePack include following features:
+[![](https://img.shields.io/badge/Swift-3.0-Orange.svg)]()
+[![PyPI](https://img.shields.io/pypi/l/Django.svg?maxAge=2592000)]()
+[![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20OS%20X%20%7C%20watchOS%20%7C%20tvOS%20%7C%20Linux-lightgrey.svg)]()
 
-- Pack custom structs and classes / unpack objects by groups and apply handler to each group (easier to re-construct your struct$)
+YSMessagePack is a messagePack packer/unpacker written in swift include following features:
+
+- No classes
+- Pack custom structs and classes / unpack objects by groups and apply handler to each group
 - Asynchronous unpacking
 - Pack and unpack multiple message-packed data regardless of types with only one line of code
 - Specify how many items to unpack
@@ -16,7 +21,7 @@ YSMessagePack is a messagePack packer/unpacker written in swift (swift 3 ready).
 
 ## Installation
 
-- (recommanded) Simply add files under `YSMessagePack/Classes` to your project, 
+- (recommanded) Simply add files under `Sources/` to your project, 
 - use cocoapod, add "pod `'YSMessagePack', '~> 1.6.0'` to your podfile  
 
 > since YSMessagePack has such small codebase. It is recommanded to simply add these files to your xcode project so it can link statically. linking any kind of frameworks (dyld) will  create an overhead and slow down your app when it launch.
