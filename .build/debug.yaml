@@ -1,0 +1,47 @@
+client:
+  name: swift-build
+tools: {}
+targets:
+  "test": ["<YSMessagePack.module>","<YSMessagePackTestSuite.module>","<YSMessagePackTests.test>"]
+  "main": ["<YSMessagePack.module>"]
+default: "main"
+commands: 
+  "<YSMessagePack.module>":
+    tool: swift-compiler
+    executable: "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "YSMessagePack"
+    module-output-path: "/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.swiftmodule"
+    inputs: []
+    outputs: ["<YSMessagePack.module>","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/misc.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/NSDataCasters.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/operators.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/pack.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/parse.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/unpack.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/YSMessagePack.swift.o"]
+    import-paths: ["/Users/yuuji/Documents/YSMessagePack/.build/debug"]
+    temps-path: "/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build"
+    objects: ["/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/misc.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/NSDataCasters.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/operators.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/pack.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/parse.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/unpack.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/YSMessagePack.swift.o"]
+    other-args: ["-j8","-D","SWIFT_PACKAGE","-Onone","-g","-enable-testing","-F","/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-target","x86_64-apple-macosx10.10","-sdk","/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk","-module-cache-path","/Users/yuuji/Documents/YSMessagePack/.build/debug/ModuleCache"]
+    sources: ["/Users/yuuji/Documents/YSMessagePack/Sources/misc.swift","/Users/yuuji/Documents/YSMessagePack/Sources/NSDataCasters.swift","/Users/yuuji/Documents/YSMessagePack/Sources/operators.swift","/Users/yuuji/Documents/YSMessagePack/Sources/pack.swift","/Users/yuuji/Documents/YSMessagePack/Sources/parse.swift","/Users/yuuji/Documents/YSMessagePack/Sources/unpack.swift","/Users/yuuji/Documents/YSMessagePack/Sources/YSMessagePack.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: "8"
+
+  "<YSMessagePackTestSuite.module>":
+    tool: swift-compiler
+    executable: "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "YSMessagePackTestSuite"
+    module-output-path: "/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePackTestSuite.swiftmodule"
+    inputs: ["<YSMessagePack.module>"]
+    outputs: ["<YSMessagePackTestSuite.module>","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePackTestSuite.build/YSMessagePackTests.swift.o"]
+    import-paths: ["/Users/yuuji/Documents/YSMessagePack/.build/debug"]
+    temps-path: "/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePackTestSuite.build"
+    objects: ["/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePackTestSuite.build/YSMessagePackTests.swift.o"]
+    other-args: ["-j8","-D","SWIFT_PACKAGE","-Onone","-g","-enable-testing","-F","/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-target","x86_64-apple-macosx10.10","-sdk","/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk","-module-cache-path","/Users/yuuji/Documents/YSMessagePack/.build/debug/ModuleCache"]
+    sources: ["/Users/yuuji/Documents/YSMessagePack/Tests/YSMessagePack/YSMessagePackTests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: "8"
+
+  "<YSMessagePackTests.test>":
+    tool: shell
+    description: "Linking .build/debug/YSMessagePackTests.xctest/Contents/MacOS/YSMessagePackTests"
+    inputs: ["/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePackTestSuite.build/YSMessagePackTests.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/misc.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/NSDataCasters.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/operators.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/pack.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/parse.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/unpack.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/YSMessagePack.swift.o"]
+    outputs: ["<YSMessagePackTests.test>","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePackTests.xctest/Contents/MacOS/YSMessagePackTests"]
+    args: ["/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-target","x86_64-apple-macosx10.10","-sdk","/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk","-g","-L/Users/yuuji/Documents/YSMessagePack/.build/debug","-o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePackTests.xctest/Contents/MacOS/YSMessagePackTests","-module-name","YSMessagePackTests","-Xlinker","-bundle","-F","/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePackTestSuite.build/YSMessagePackTests.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/misc.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/NSDataCasters.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/operators.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/pack.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/parse.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/unpack.swift.o","/Users/yuuji/Documents/YSMessagePack/.build/debug/YSMessagePack.build/YSMessagePack.swift.o"]
+
